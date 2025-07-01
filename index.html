@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PyMail – Terminal-Based Email Client | Bocaletto Luca</title>
+  <meta name="description" content="PyMail is a terminal-based email client supporting IMAP folder navigation, threaded view, search, SMTP sending, PGP/GPG signing & encryption, attachments, editor-based composition, and customizable shortcuts & themes.">
+  <meta name="keywords" content="PyMail, terminal email client, CLI email, IMAP, SMTP, PGP, GPG, attachments, Python, prompt_toolkit, rich">
+  <meta name="author" content="Luca Bocaletto">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 900px; margin: auto; }
+    h1, h2, h3 { color: #333; }
+    nav ul { list-style: none; padding: 0; }
+    nav li { margin: 5px 0; }
+    pre { background: #f4f4f4; padding: 10px; overflow-x: auto; }
+    code { font-family: monospace; background: #f4f4f4; padding: 2px 4px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .btn { display: inline-block; margin: 10px 0; padding: 10px 15px; background: #24292e; color: #fff; border-radius: 5px; text-decoration: none; }
+    footer { margin-top: 40px; font-size: 0.9em; border-top: 1px solid #ddd; padding-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>PyMail</h1>
+  <p>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="GPL v3 License"></a>
+    <a href="#"><img src="https://img.shields.io/badge/version-1.0.0-green.svg" alt="Version 1.0.0"></a>
+  </p>
+
+  <a class="btn" href="https://github.com/bocaletto-luca/PyMail" target="_blank">Source Code</a>
+
+  <nav>
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#prerequisites">Prerequisites</a></li>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#configuration">Configuration</a></li>
+      <li><a href="#usage">Usage</a></li>
+      <li><a href="#shortcuts">Shortcuts & Themes</a></li>
+      <li><a href="#contributing">Contributing</a></li>
+      <li><a href="#license">License</a></li>
+      <li><a href="#author">Author</a></li>
+    </ul>
+  </nav>
+
+  <hr>
+
+  <h2 id="overview">Overview</h2>
+  <p><strong>PyMail</strong> is a single-file, interactive CLI application for reading and composing email entirely in your terminal. It leverages:</p>
+  <ul>
+    <li><strong>IMAPClient</strong> for folder navigation, threaded message lists, and search</li>
+    <li><strong>smtplib</strong> for sending new messages with attachments</li>
+    <li><strong>python-gnupg</strong> for inline PGP/GPG signing and encryption</li>
+    <li><strong>prompt_toolkit</strong> for menu navigation and customizable keybindings</li>
+    <li><strong>Rich</strong> for beautiful tables, syntax-highlighted markdown, and notifications</li>
+  </ul>
+
+  <hr>
+
+  <h2 id="features">Features</h2>
+  <ul>
+    <li>IMAP folder navigation and threaded view</li>
+    <li>Search messages by subject or sender</li>
+    <li>Compose messages in your editor with attachment support</li>
+    <li>Inline PGP/GPG signing and encryption of outgoing mail</li>
+    <li>Download and upload attachments</li>
+    <li>Customizable shortcuts via config</li>
+    <li>Color themes for prompt_toolkit</li>
+    <li>Persistent config in <code>~/.config/pyemail/config.yaml</code></li>
+  </ul>
+
+  <hr>
+
+  <h2 id="prerequisites">Prerequisites</h2>
+  <ul>
+    <li>Python 3.8 or newer</li>
+    <li>IMAP and SMTP email account</li>
+    <li>GPG with a keypair</li>
+    <li>Terminal with 256-color support (optional)</li>
+  </ul>
+
+  <hr>
+
+  <h2 id="installation">Installation</h2>
+  <pre><code>git clone https://github.com/bocaletto-luca/PyMail.git
+cd PyMail
+pip install -r requirements.txt
+chmod +x pymail.py</code></pre>
+
+  <hr>
+
+  <h2 id="configuration">Configuration</h2>
+  <p>On first run, PyMail creates a default config file at <code>~/.config/pyemail/config.yaml</code>. Edit it with your server and account settings:</p>
+  <pre><code>imap_host: imap.example.com
+imap_port: 993
+smtp_host: smtp.example.com
+smtp_port: 587
+
+email: user@example.com
+gpg_recipient: YOUR_GPG_KEYID
+
+shortcuts:
+  quit: q
+  back: b
+
+theme: monokai</code></pre>
+
+  <hr>
+
+  <h2 id="usage">Usage</h2>
+  <ol>
+    <li>Run <code>./pymail.py</code> and enter your password.</li>
+    <li>Select <strong>Folders</strong> to browse mail folders and read messages.</li>
+    <li>Select <strong>Search</strong> to find mails by subject/from.</li>
+    <li>Select <strong>Compose</strong> to draft and send new mail (with PGP support).</li>
+    <li>Select <strong>Quit</strong> to exit the client.</li>
+  </ol>
+
+  <hr>
+
+  <h2 id="shortcuts">Shortcuts & Themes</h2>
+  <p>Customize keys and UI colors in <code>config.yaml</code> under <code>shortcuts</code> and <code>theme</code>.</p>
+
+  <hr>
+
+  <h2 id="contributing">Contributing</h2>
+  <p>Fork, branch, add tests, and submit a pull request. Please follow PEP 8 and include clear commit messages.</p>
+
+  <hr>
+
+  <h2 id="license">License</h2>
+  <p>Licensed under the <strong>GNU GPL v3</strong>. See <a href="LICENSE">LICENSE</a> for details.</p>
+
+  <hr>
+
+  <h2 id="author">Author</h2>
+  <p><strong>Luca Bocaletto</strong><br>
+     <a href="https://bocaletto-luca.github.io">Website</a> · 
+     <a href="https://github.com/bocaletto-luca">GitHub</a> · 
+     <a href="https://bocalettoluca.altervista.org">Portfolio</a></p>
+
+  <footer>
+    &copy; 2025 Luca Bocaletto · Licensed under GPL v3 · 
+    <a href="https://bocaletto-luca.github.io">Site</a> · 
+    <a href="https://github.com/bocaletto-luca">GitHub</a> · 
+    <a href="https://bocalettoluca.altervista.org">Portfolio</a>
+  </footer>
+
+</body>
+</html>
