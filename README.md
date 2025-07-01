@@ -2,7 +2,7 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE) [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/bocaletto-luca/PyMail)
 
-A terminal-based email client with IMAP reading, SMTP sending, PGP/GPG inline signing & encryption, attachment handling, folder navigation, search, and a customizable menu interface.
+PyMail is a terminal-based email client offering IMAP folder navigation, message threading, search, and SMTP-based sending. It integrates PGP/GPG inline signing and encryption, supports attachments, drafts in your editor, customizable shortcuts and color themes, and stores settings in a simple config file.
 
 ---
 
