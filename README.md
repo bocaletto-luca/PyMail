@@ -1,6 +1,7 @@
 # PyMail
+#### Author: Bocaletto Luca
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE) [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/bocaletto-luca/PyMail)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge&logo=gnu)](LICENSE) [![Language: Python](https://img.shields.io/badge/Language-Python-blue?style=for-the-badge&logo=python)](https://www.python.org/) [![Linux-Compatible](https://img.shields.io/badge/Linux-Compatible-blue?style=for-the-badge&logo=linux)](https://www.kernel.org/) [![Status: Complete](https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge)](https://github.com/bocaletto-luca/Directory-Monitor)
 
 PyMail is a terminal-based email client offering IMAP folder navigation, message threading, search, and SMTP-based sending. It integrates PGP/GPG inline signing and encryption, supports attachments, drafts in your editor, customizable shortcuts and color themes, and stores settings in a simple config file.
 
